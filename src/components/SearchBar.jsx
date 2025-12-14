@@ -13,7 +13,7 @@ const SearchBar = ({setQuery,setCategoria,setActivateSearch}) => {
     <div className='search-bar'>
       <input type="text" placeholder='Pesquisar fotos...' onChange={(e) => setQuery(e.target.value)}/>
       <button onClick={() => setActivateSearch(true)}>Pesquisar</button>
-      <select onChange={(e) => {setCategoria(e.target.value); setActivateSearch(true)}}>
+      <select onChange={(e) => {setCategoria(e.target.value); setActivateSearch(true)}} className='select-bar'>
         {categorias.map((categoria) => (
           <option value={categoria} key={categoria}>
             {categoria}

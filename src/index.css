@@ -36,17 +36,35 @@
 .search-bar button{
   padding: 11px 20px;
   cursor: pointer;
+  margin-right: 10px;
 }
 
-.search-bar section{
+.select-bar{
   padding: 10px ;
   margin-left: 10px;
+  border:1px solid black;
+  cursor: pointer;
+}
+
+@media (max-width:550px){
+  .select-bar{
+    width: 105px;
+    padding: 10px;
+    margin-left: 0;
+    margin-right: 80p;
+  }
 }
 
 .album {
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 16px;
+}
+
+@media (max-width:830px) {
+  .album{
+    grid-template-columns: repeat(3,1fr);
+  }
 }
 
 @media (max-width:775px) {
@@ -97,7 +115,11 @@
 }
 
 .foto-ampliada-container img{
-  max-width: 45%;
-  max-block-size: 100%;
-  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  max-width: 80vh;
+}
+
+button:hover{
+  background-color: rgb(198, 240, 255);
 }

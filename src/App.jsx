@@ -33,7 +33,7 @@ const App = () => {
           params: {
             client_id: apiKey,
             query: searchQuery,
-            per_page: 12
+            per_page: 24
           }
         }
       )
