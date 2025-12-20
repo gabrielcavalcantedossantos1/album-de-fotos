@@ -12,8 +12,11 @@ const App = () => {
   const [fotoAmpliada, setFotoAmpliada] = useState(null)
   const [activateSearch, setActivateSearch] = useState(false)
   const [erro, setErro] = useState(false)
+  const [loading,setloading] = useState(false)
 
   const fetchData = async () => {
+
+    setloading(true)
     try {
       const apiKey = import.meta.env.VITE_UNSPLASH_API_KEY
 
@@ -44,8 +47,9 @@ const App = () => {
     } catch (error) {
       console.error(error)
       setErro(true)
-    }
-  }
+    } finally{
+    setloading(false)
+  }}
 
   useEffect(() => {
     if (activateSearch) {
@@ -58,8 +62,9 @@ const App = () => {
     fetchData()
   },[])
 
-  return (
-    <div className="container">
+  return (<>
+    {loading && <p className='loading'>Carregando Fotos...</p>}
+    {!loading && <div className="container">
       {erro ? (
         <p className="erro">
           ⚠️ Erro ao carregar dados das fotos. Tente novamente mais tarde.
@@ -85,8 +90,8 @@ const App = () => {
           )}
         </>
       )}
-    </div>
-  )
+    </div>}
+  </>)
 }
 
 export default App

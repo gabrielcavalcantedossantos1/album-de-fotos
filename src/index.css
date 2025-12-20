@@ -123,3 +123,12 @@
 button:hover{
   background-color: rgb(198, 240, 255);
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
